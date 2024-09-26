@@ -1,0 +1,30 @@
+<div> 
+    <div class="container w- h-100 m-auto align-items-center d-flex flex-column centerpiece">
+        <div class="container my-5 d-flex flex-column">
+            <div class="h2 mx-auto mb-5">Wellcome</div>
+            <div class="row mb-12">
+                <div class= "h4" *ngIf="show==false"> {{ message }} </div>
+                <table class="table table-hover table-responsive">
+                    <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Error id</th>
+                          <th scope="col">Machine</th>
+                          <th scope="col">Error operation</th>
+                          <th scope="col">Error date</th>
+                          <th scope="col">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor = "let err of errorList" >
+                        <tr class='clickable-row' onclick>
+                            <th scope="row">{{ err.errorId }}</th>
+                            <td>{{ err.machine.machineId }} - {{ err.machine.name }}</td>
+                            <td>{{ err.operation }}</td>
+                            <td>{{ err.errorDate }}</td>
+                            <td>{{ err.message }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div>
+        </div>
+    </div>
+</div>
